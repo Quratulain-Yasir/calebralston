@@ -12,6 +12,7 @@
   --color-primary-hover: #9bbdac;
   --font-display: "Suwannaphum", Georgia, serif;
   --font-body: var(--font-body), system-ui, sans-serif;
+  --color-ink-mid: #2A5450;
 }
 
 body {
