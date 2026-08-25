@@ -7,7 +7,7 @@ export function sbUrl(link: any) {
 }
 
 const variants: Record<string, string> = {
-  primary: "bg-ink text-white hover:opacity-90",
+  primary: "bg-primary text-white hover:opacity-90",
   cream:   "bg-white text-ink hover:opacity-90",
   outline: "border-2 border-current bg-transparent",
 };

@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 
 const themes: Record<string, string> = {
   red: "bg-brick text-white",
-  green: "bg-ink text-white",
+  green: "bg-primary text-white",
 };
 
 export default function ServiceCard({ blok }: { blok: any }) {
@@ -43,7 +43,7 @@ export default function ServiceCard({ blok }: { blok: any }) {
 
           {blok.timing_label && (
             <p className="mt-7">
-              <span className="inline-block rounded-lg bg-sage px-5 py-3 text-sm font-bold text-ink md:text-base">
+              <span className="inline-block rounded-lg bg-sage px-5 py-2 text-sm font-bold text-primary transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
                 {blok.timing_label}
               </span>
             </p>
