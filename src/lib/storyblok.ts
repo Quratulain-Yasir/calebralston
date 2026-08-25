@@ -7,6 +7,11 @@ import RalstonSelect from "@/components/blocks/RalstonSelect";
 import PodcastGrid from "@/components/blocks/PodcastGrid";
 import PodcastCard from "@/components/blocks/PodcastCard";
 import NewsletterForm from "@/components/blocks/NewsletterForm";
+import ServiceHero from "@/components/blocks/ServiceHero";
+import ServiceList from "@/components/blocks/ServiceList";
+import ServiceCard from "@/components/blocks/ServiceCard";
+import ListGroup from "@/components/blocks/ListGroup";
+import BrandCta from "@/components/blocks/BrandCta";
 
 type HeroProps = {
   blok: any;
@@ -24,6 +29,11 @@ export const getStoryblokApi = storyblokInit({
     podcast_grid: PodcastGrid,
     podcast_card: PodcastCard,
     newsletter_form: NewsletterForm,
+    service_hero: ServiceHero,
+    service_list: ServiceList,
+    services_card: ServiceCard,
+    list_group: ListGroup,
+    brand_cta: BrandCta,
   },
   apiOptions: { region: "eu" },
 });
