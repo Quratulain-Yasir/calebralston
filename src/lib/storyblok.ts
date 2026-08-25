@@ -12,6 +12,9 @@ import ServiceList from "@/components/blocks/ServiceList";
 import ServiceCard from "@/components/blocks/ServiceCard";
 import ListGroup from "@/components/blocks/ListGroup";
 import BrandCta from "@/components/blocks/BrandCta";
+import TeamHero from "@/components/blocks/TeamHero";
+import TeamList from "@/components/blocks/TeamList";
+import TeamMember from "@/components/blocks/TeamMember";
 
 type HeroProps = {
   blok: any;
@@ -34,6 +37,9 @@ export const getStoryblokApi = storyblokInit({
     services_card: ServiceCard,
     list_group: ListGroup,
     brand_cta: BrandCta,
+    team_hero: TeamHero,
+    team_list: TeamList,
+    team_member: TeamMember,
   },
   apiOptions: { region: "eu" },
 });
