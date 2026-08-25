@@ -15,6 +15,9 @@ import BrandCta from "@/components/blocks/BrandCta";
 import TeamHero from "@/components/blocks/TeamHero";
 import TeamList from "@/components/blocks/TeamList";
 import TeamMember from "@/components/blocks/TeamMember";
+import PodcastBookingForm from "@/components/blocks/PodcastBookingForm";
+import PodcastVideoCard from "@/components/blocks/PodcastVideoCard";
+import PodcastVideoGrid from "@/components/blocks/PodcastVideoGrid";
 
 type HeroProps = {
   blok: any;
@@ -40,6 +43,9 @@ export const getStoryblokApi = storyblokInit({
     team_hero: TeamHero,
     team_list: TeamList,
     team_member: TeamMember,
+    podcast_booking_form: PodcastBookingForm,
+    podcast_video_card: PodcastVideoCard,
+    podcast_video_grid: PodcastVideoGrid,
   },
   apiOptions: { region: "eu" },
 });
