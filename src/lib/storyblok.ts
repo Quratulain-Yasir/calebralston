@@ -18,6 +18,15 @@ import TeamMember from "@/components/blocks/TeamMember";
 import PodcastBookingForm from "@/components/blocks/PodcastBookingForm";
 import PodcastVideoCard from "@/components/blocks/PodcastVideoCard";
 import PodcastVideoGrid from "@/components/blocks/PodcastVideoGrid";
+import SelectHero from "@/components/blocks/SelectHero";
+import QualifyCard from "@/components/blocks/QualifyCard";
+import SelectQualify from "@/components/blocks/SelectQualify";
+import SelectFounder from "@/components/blocks/SelectFounder";
+import SelectFoundersList from "@/components/blocks/SelectFoundersList";
+import CurriculumFeature from "@/components/blocks/CurriculumFeature";
+import SelectCurriculum from "@/components/blocks/SelectCurriculum";
+import CurriculumPreviewCard from "@/components/blocks/CurriculumPreviewCard";
+import SelectCurriculumPreview from "@/components/blocks/SelectCurriculumPreview";
 
 type HeroProps = {
   blok: any;
@@ -46,6 +55,15 @@ export const getStoryblokApi = storyblokInit({
     podcast_booking_form: PodcastBookingForm,
     podcast_video_card: PodcastVideoCard,
     podcast_video_grid: PodcastVideoGrid,
+    select_hero: SelectHero,
+    qualify_card: QualifyCard,
+    select_qualify: SelectQualify,
+    select_founder: SelectFounder,
+    select_founders_list: SelectFoundersList,
+    curriculum_feature: CurriculumFeature,
+    select_curriculum: SelectCurriculum,
+    curriculum_preview_card: CurriculumPreviewCard,
+    select_curriculum_preview: SelectCurriculumPreview,
   },
   apiOptions: { region: "eu" },
 });
