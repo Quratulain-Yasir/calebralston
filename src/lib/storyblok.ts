@@ -27,7 +27,13 @@ import CurriculumFeature from "@/components/blocks/CurriculumFeature";
 import SelectCurriculum from "@/components/blocks/SelectCurriculum";
 import CurriculumPreviewCard from "@/components/blocks/CurriculumPreviewCard";
 import SelectCurriculumPreview from "@/components/blocks/SelectCurriculumPreview";
-
+import TestimonialScreenshot from "@/components/blocks/TestimonialScreenshot";
+import SelectTestimonials from "@/components/blocks/SelectTestimonials";
+import PricingFeature from "@/components/blocks/PricingFeature";
+import SelectPricing from "@/components/blocks/SelectPricing";
+import SelectActionNow from "@/components/blocks/SelectActionNow";
+import FaqItem from "@/components/blocks/FaqItem";
+import SelectFaq from "@/components/blocks/SelectFaq";
 type HeroProps = {
   blok: any;
 };
@@ -64,6 +70,13 @@ export const getStoryblokApi = storyblokInit({
     select_curriculum: SelectCurriculum,
     curriculum_preview_card: CurriculumPreviewCard,
     select_curriculum_preview: SelectCurriculumPreview,
+    testimonial_screenshot: TestimonialScreenshot,
+    select_testimonials: SelectTestimonials,
+    pricing_feature: PricingFeature,
+    select_pricing: SelectPricing,
+    select_action_now: SelectActionNow,
+    faq_item: FaqItem,
+    select_faq: SelectFaq,
   },
   apiOptions: { region: "eu" },
 });

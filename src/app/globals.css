@@ -8,13 +8,13 @@
   --color-sage: #a8c5b5;
   --color-brick: #c8342b;
   --color-ink-deep: #01191F;
+  --color-ink-deep-soft: #002D36;
   --color-primary: #244b4b;
   --color-primary-hover: #9bbdac;
   --font-display: "Suwannaphum", Georgia, serif;
   --font-body: var(--font-body), system-ui, sans-serif;
   --color-ink-mid: #2A5450;
 }
-
 body {
   font-family: var(--font-body);
 }
