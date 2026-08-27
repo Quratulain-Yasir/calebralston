@@ -4,13 +4,24 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { X, Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { sbUrl } from "@/components/ui/Button";
 
 export default function Navbar({ config }: { config: any }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isAboutPage = pathname === "/about";
 
   const lightLogo = config.logo_on_light?.filename;
   const darkLogo = config.logo_on_dark?.filename;
+
+  function getNavItem(item: any) {
+    const href = sbUrl(item.link);
+    if (isAboutPage && href === "/ralston-select") {
+      return { label: "Speaking", href: "/speaking" };
+    }
+    return { label: item.label, href };
+  }
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,15 +51,18 @@ export default function Navbar({ config }: { config: any }) {
           </Link>
 
           <nav className="flex items-center gap-8">
-            {config.nav_links?.map((item: any) => (
-              <Link
-                key={item._uid}
-                href={sbUrl(item.link)}
-                className="text-[15px] font-medium text-black transition-colors hover:text-primary"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {config.nav_links?.map((item: any) => {
+              const navItem = getNavItem(item);
+              return (
+                <Link
+                  key={item._uid}
+                  href={navItem.href}
+                  className="text-[15px] font-medium text-black transition-colors hover:text-primary"
+                >
+                  {navItem.label}
+                </Link>
+              );
+            })}
 
             {config.header_cta_label && (
               <Link
@@ -97,7 +111,9 @@ export default function Navbar({ config }: { config: any }) {
           ========================= */}
       <div
         className={`fixed inset-0 z-[60] bg-black/30 transition-opacity duration-300 md:hidden ${
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          open
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
         onClick={() => setOpen(false)}
         aria-hidden="true"
@@ -121,16 +137,19 @@ export default function Navbar({ config }: { config: any }) {
         </div>
 
         <nav className="flex flex-1 flex-col px-8 pt-8 sm:px-10">
-          {config.nav_links?.map((item: any) => (
-            <Link
-              key={item._uid}
-              href={sbUrl(item.link)}
-              onClick={() => setOpen(false)}
-              className="border-b border-white/10 py-7 text-[28px] font-semibold leading-none text-white transition-opacity hover:opacity-70"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {config.nav_links?.map((item: any) => {
+            const navItem = getNavItem(item);
+            return (
+              <Link
+                key={item._uid}
+                href={navItem.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-white/10 py-7 text-[28px] font-semibold leading-none text-white transition-opacity hover:opacity-70"
+              >
+                {navItem.label}
+              </Link>
+            );
+          })}
         </nav>
       </aside>
     </>
