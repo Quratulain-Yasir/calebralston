@@ -34,7 +34,7 @@ export default function LeadCaptureModal({
       <div
         {...storyblokEditable(blok)}
         onClick={(e) => e.stopPropagation()}
-        className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 sm:p-10"
+        className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 lg:p-13"
       >
         <button
           type="button"
@@ -46,7 +46,7 @@ export default function LeadCaptureModal({
         </button>
 
         {blok.headline && (
-          <h2 className="pr-8 text-center font-display text-3xl font-bold text-ink sm:text-4xl">
+          <h2 className="text-center font-display text-3xl font-bold text-primary lg:text-4xl">
             {blok.headline}
           </h2>
         )}

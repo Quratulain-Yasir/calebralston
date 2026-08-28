@@ -69,12 +69,6 @@ export default function CourseVideoHero({ blok }: { blok: any }) {
               </h1>
             )}
 
-            {blok.badge_text && (
-              <span className="mt-8 inline-block rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white sm:text-base">
-                {blok.badge_text}
-              </span>
-            )}
-
             {blok.cta_label && (
               <button
                 type="button"
