@@ -41,6 +41,10 @@ import SpeakingSection from "@/components/blocks/SpeakingSection";
 import SpeakingHero from "@/components/blocks/SpeakingHero";
 import SpeakingForm from "@/components/blocks/SpeakingForm";
 import CourseHero from "@/components/blocks/CourseHero";
+// import MediaTeamHero from "@/components/blocks/MediaTeamHero";
+import CourseVideoHero from "@/components/blocks/CourseVideoHero";
+import LeadCaptureModal from "@/components/blocks/LeadCaptureModal";
+
 
 type HeroProps = {
   blok: any;
@@ -92,6 +96,9 @@ export const getStoryblokApi = storyblokInit({
     speaking_hero: SpeakingHero,
     speaking_form: SpeakingForm,
     course_hero: CourseHero,
+    // media_team_hero: MediaTeamHero,
+    course_video_hero: CourseVideoHero,
+    lead_capture_modal: LeadCaptureModal,
   },
   apiOptions: { region: "eu" },
 });

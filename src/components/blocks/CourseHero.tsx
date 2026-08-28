@@ -60,10 +60,10 @@ export default function CourseHero({ blok }: { blok: any }) {
         {...storyblokEditable(blok)}
         className="bg-ink-deep px-5 py-16 text-center sm:px-8 md:py-24"
       >
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-xl">
           {/* Video thumbnail */}
           {blok.video_thumbnail?.filename && (
-            <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black/40">
+            <div className="relative aspect-video w-full overflow-hidden bg-black/40">
               <Image
                 src={optimizedSrc(blok.video_thumbnail.filename)}
                 alt={blok.video_thumbnail.alt || "Video thumbnail"}
@@ -77,10 +77,10 @@ export default function CourseHero({ blok }: { blok: any }) {
                   type="button"
                   onClick={openModal}
                   aria-label="Play video"
-                  className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary shadow-lg transition hover:scale-105 sm:h-20 sm:w-20"
+                  className="absolute left-1/2 top-1/2 flex h-16 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary shadow-lg transition hover:scale-105 sm:h-20 sm:w-20"
                 >
                   <Play
-                    size={26}
+                    size={24}
                     strokeWidth={0}
                     fill="currentColor"
                     className="ml-1"
