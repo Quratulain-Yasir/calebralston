@@ -35,9 +35,12 @@ import SelectActionNow from "@/components/blocks/SelectActionNow";
 import FaqItem from "@/components/blocks/FaqItem";
 import SelectFaq from "@/components/blocks/SelectFaq";
 import AboutHero from "@/components/blocks/AboutHero";
-import SpeakingHeroForm from "@/components/blocks/SpeakingHeroForm";
 import SpeakingVideoCard from "@/components/blocks/SpeakingVideoCard";
 import SpeakingVideoGrid from "@/components/blocks/SpeakingVideoGrid";
+import SpeakingSection from "@/components/blocks/SpeakingSection";
+import SpeakingHero from "@/components/blocks/SpeakingHero";
+import SpeakingForm from "@/components/blocks/SpeakingForm";
+import CourseHero from "@/components/blocks/CourseHero";
 
 type HeroProps = {
   blok: any;
@@ -83,9 +86,12 @@ export const getStoryblokApi = storyblokInit({
     faq_item: FaqItem,
     select_faq: SelectFaq,
     about_hero: AboutHero,
-    speaking_hero_form: SpeakingHeroForm,
     speaking_video_card: SpeakingVideoCard,
     speaking_video_grid: SpeakingVideoGrid,
+    speaking_section: SpeakingSection,
+    speaking_hero: SpeakingHero,
+    speaking_form: SpeakingForm,
+    course_hero: CourseHero,
   },
   apiOptions: { region: "eu" },
 });

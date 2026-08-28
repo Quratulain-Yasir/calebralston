@@ -29,12 +29,12 @@ export default function SpeakingVideoCard({ blok }: { blok: any }) {
       <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-8">
         <div>
           {blok.speaker_name && (
-            <p className="text-sm font-medium text-white/80 sm:text-base">
+            <p className="text-sm font-medium font-body text-white/80 sm:text-base">
               {blok.speaker_name}
             </p>
           )}
           {blok.title && (
-            <h3 className="mt-1 text-xl font-bold text-white sm:text-2xl">
+            <h3 className="mt-1 text-lg font-semibold font-body text-white lg:text-xl">
               {blok.title}
             </h3>
           )}
@@ -44,9 +44,18 @@ export default function SpeakingVideoCard({ blok }: { blok: any }) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex shrink-0 items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-bold text-ink transition hover:opacity-90 sm:text-base"
+          className="inline-flex items-center gap-2 rounded-md border border-white/70 bg-transparent px-3 py-1 text-sm font-semibold text-white transition hover:bg-white hover:text-primary sm:text-base"
         >
-          Play ▶
+          Play{" "}
+          <svg
+            width="9"
+            height="11"
+            viewBox="0 0 10 12"
+            fill="currentColor"
+            aria-hidden
+          >
+            <path d="M0 0l10 6-10 6z" />
+          </svg>
         </Link>
       </div>
     </div>
