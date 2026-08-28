@@ -125,7 +125,7 @@ export default function LeadCaptureModal({
           {blok.submit_label && (
             <button
               type="submit"
-              className="mt-2 rounded-lg bg-sage-dark px-8 py-4 font-bold text-white transition hover:opacity-90"
+              className="mt-2 bg-primary px-8 py-4 font-bold text-white transition hover:opacity-90"
             >
               {blok.submit_label}
             </button>

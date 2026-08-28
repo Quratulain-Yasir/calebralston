@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X, Play } from "lucide-react";
 
 type EducationProps = {
@@ -32,12 +33,13 @@ export default function Education({ blok }: EducationProps) {
   const heading = blok?.heading ?? "";
   const cards = blok?.cards ?? [];
 
-  const handlePlayClick = (rawUrl: string) => {
+  const handlePlayClick = (e: React.MouseEvent, rawUrl: string) => {
+    e.preventDefault();
+    e.stopPropagation();
     const embedUrl = getYoutubeEmbedUrl(rawUrl);
     if (embedUrl) {
       setActiveVideo(embedUrl);
     } else if (rawUrl) {
-      // YouTube nahi hai — normal link naye tab mein khol do
       window.open(rawUrl, "_blank", "noopener,noreferrer");
     }
   };
@@ -57,11 +59,17 @@ export default function Education({ blok }: EducationProps) {
               const imageUrl = card.image?.filename;
               const imageAlt = card.image?.alt || card.title || "";
               const rawUrl = card.video_url ?? "";
+              const ctaHref =
+                card.cta_link?.url || card.cta_link?.cached_url || "";
+
+              const CardWrapper = ctaHref ? Link : "div";
+              const wrapperProps = ctaHref ? { href: ctaHref } : {};
 
               return (
-                <div
+                <CardWrapper
                   key={card._uid}
-                  className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-ink-deep sm:aspect-[3/4]"
+                  {...(wrapperProps as any)}
+                  className="group relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-ink-deep shadow-lg shadow-black/30 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50 sm:aspect-[3/4]"
                 >
                   {imageUrl && (
                     <Image
@@ -98,15 +106,15 @@ export default function Education({ blok }: EducationProps) {
                     {rawUrl && (
                       <button
                         type="button"
-                        onClick={() => handlePlayClick(rawUrl)}
-                        className="inline-flex items-center gap-2 rounded-md border border-white/70 bg-transparent px-3 py-1 text-sm font-semibold text-white transition hover:bg-white hover:text-primary sm:text-base"
+                        onClick={(e) => handlePlayClick(e, rawUrl)}
+                        className="relative z-10 inline-flex items-center gap-2 rounded-md border border-white/70 bg-transparent px-3 py-1 text-sm font-semibold text-white transition hover:bg-white hover:text-primary sm:text-base"
                       >
                         <span>Play</span>
                         <Play size={14} strokeWidth={0} fill="currentColor" />
                       </button>
                     )}
                   </div>
-                </div>
+                </CardWrapper>
               );
             })}
           </div>

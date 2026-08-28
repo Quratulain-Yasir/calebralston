@@ -73,9 +73,9 @@ export default function CourseVideoHero({ blok }: { blok: any }) {
               <button
                 type="button"
                 onClick={() => setIsFormOpen(true)}
-                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-sage-dark px-6 py-3 font-bold text-white transition hover:opacity-90"
+                className="mt-8 inline-flex items-center gap-2 rounded-md bg-sage-dark px-6 py-3 font-semibold text-white transition hover:opacity-90 border"
               >
-                {blok.cta_label} ▶
+                {blok.cta_label}
               </button>
             )}
           </div>
